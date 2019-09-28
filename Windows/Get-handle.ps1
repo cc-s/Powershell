@@ -15,7 +15,7 @@
      General notes
 #>
 
-function Get-handle($Process,$ExePath){
+function Get-Handle($Process,$ExePath){
 
      if ($ExePath -notlike "*handle*"){
           Write-Error -Message "Proved correct path to handle64.exe"
