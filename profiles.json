@@ -1,4 +1,3 @@
-
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "globals" : 
@@ -199,9 +198,11 @@
                 ]
             },
           { "command": "closeWindow", "keys": ["alt+f4"] },
-    { "command": "splitHorizontal", "keys": ["ctrl+-"]},
-    { "command": "splitVertical", "keys": ["ctrl+p"]}
-	],
+    { "command": "splitHorizontal", "keys": ["alt+h"]},
+    { "command": "splitVertical", "keys": ["alt+v"]},
+    { "command": "closePane", "keys": ["alt+w"]},
+    { "command": "find", "keys": ["ctrl+f"]}
+        ],
         "requestedTheme" : "system",
         "showTabsInTitlebar" : true,
         "showTerminalTitleInTitlebar" : false
@@ -227,14 +228,14 @@
 	    "startingDirectory" : "%UserProfile%",
             "useAcrylic" : false
         },
-		{
-            "acrylicOpacity" : 0.75,
+        {
+            "acrylicOpacity" : 0.50,
             "background" : "#051a38",
             "closeOnExit" : true,
             "colorScheme" : "CC",
             "commandline" : "powershell.exe",
-            "cursorColor" : "#F9F1A5",
-            "cursorShape" : "bar",
+            "cursorColor" : "#255e33",
+            "cursorShape" : "vintage",
             "fontFace" : "Cascadia Code",
             "fontSize" : 14,
             "guid" : "{9053b148-bffc-40d9-85d2-de44344b0284}",
@@ -243,10 +244,32 @@
             "name" : "Windows PowerShell CC",
             "padding" : "3, 3, 3, 3",
             "snapOnInput" : true,
-	    "startingDirectory" : "%UserProfile%",
+            "startingDirectory" : "%UserProfile%",
             "useAcrylic" : false,
-			"backgroundImage" : "E:\\Users\\Carl C\\Downloads\\Stargate-Daedalus.jpg",
-			"backgroundImageOpacity" : 0.55
+            "backgroundImage" : "E:\\Users\\picture.jpg",
+            "backgroundImageOpacity" : 0.35
+        },
+        {
+            "acrylicOpacity" : 0.50,
+            "background" : "#051a38",
+            "closeOnExit" : true,
+            "colorScheme" : "CC",
+            "commandline" : "powershell.exe",
+            "cursorColor" : "#255e33",
+            "cursorShape" : "vintage",
+            "fontFace" : "Cascadia Code",
+            "fontSize" : 14,
+            "guid" : "{8ff23a16-bc21-4c2c-beb6-b6cb89cccea9}",
+            "historySize" : 9001,
+            "icon" : "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+            "name" : "Windows PowerShell CC Experimental",
+            "padding" : "3, 3, 3, 3",
+            "snapOnInput" : true,
+            "startingDirectory" : "%UserProfile%",
+            "useAcrylic" : false,
+            "backgroundImage" : "E:\\Users\\picture.jpg",
+            "backgroundImageOpacity" : 0.35,
+            "experimental.retroTerminalEffect": true
         },
         {
             "acrylicOpacity" : 0.75,
@@ -370,15 +393,15 @@
             "black" : "#073642",
             "blue" : "#268BD2",
             "brightBlack" : "#62ba47",
-            "brightBlue" : "#839496",
-            "brightCyan" : "#93A1A1",
-            "brightGreen" : "#586E75",
-            "brightPurple" : "#6C71C4",
-            "brightRed" : "#CB4B16",
+            "brightBlue" : "#591d9e",
+            "brightCyan" : "#74e6e6",
+            "brightGreen" : "#0af859",
+            "brightPurple" : "#db25c3",
+            "brightRed" : "#f70e0e",
             "brightWhite" : "#fce5a4",
             "brightYellow" : "#ebfaed",
             "cyan" : "#2AA198",
-            "foreground" : "#fce5a4",
+            "foreground" : "#ffffff",
             "green" : "#859900",
             "name" : "CC",
             "purple" : "#D33682",
