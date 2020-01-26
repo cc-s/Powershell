@@ -25,6 +25,7 @@
  }
 
 
+ 
  $Page2 = New-UDPage -Name "CPU" -Icon  address_book_o -Content { 
 
     New-UdMonitor -Type Line -Title "CPU" -RefreshInterval 1 -DataPointHistory 100 -ChartBackgroundColor '#80FF6B63' -ChartBorderColor '#FFFF6B63'  -Endpoint {
