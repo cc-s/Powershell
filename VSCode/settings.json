@@ -1,0 +1,35 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.colorTheme": "Eva Dark Bold",
+    "editor.minimap.enabled": false,
+    "workbench.colorCustomizations": {
+          "activityBar.background": "#ebeaf0",
+          "foreground":"#4a5c52",
+          "textCodeBlock.background": "#e62f2f",
+          "editor.foreground":"#d3c8c8",
+          "editorWhitespace.foreground": "#ff0000",
+          "editor.wordHighlightStrongBackground": "#d3434344"
+         
+        },
+        "editor.tokenColorCustomizations":{
+          "comments": "#8a6c6c",
+          "functions": "#844ddb",
+          
+        },
+        "editor.fontWeight": "bold",
+        //Powershell ISE Layout
+        "editor.tabCompletion": "on",
+        "powershell.integratedConsole.focusConsoleOnExecute": false,
+        //"files.autoSave": "afterDelay",
+        "terminal.integrated.fontFamily": "Consolas",
+        "terminal.integrated.fontSize": 16,
+        "terminal.integrated.lineHeight": 1,
+        "editor.tabSize": 5,
+        "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "files.autoSave": "afterDelay",
+        "git.enableSmartCommit": true,
+        "workbench.sideBar.location": "right",
+        "editor.renderWhitespace": "all",
+        
+}
