@@ -103,7 +103,7 @@
                  "snapOnInput" : true,
                  "startingDirectory" : "%UserProfile%",
                  "useAcrylic" : false,
-                 "backgroundImage" : "E:\\Users\\Carl C\\Downloads\\Stargate-Daedalus.jpg",
+                 "backgroundImage" : "E:\\images\\picture.jpg",
                  "backgroundImageOpacity" : 0.35,
                  "experimental.retroTerminalEffect": true
              }
