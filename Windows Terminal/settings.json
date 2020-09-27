@@ -69,7 +69,7 @@
                  "background" : "#051a38",
                  "closeOnExit" : true,
                  "colorScheme" : "CC",
-                 "commandline" : "powershell.exe",
+                 "commandline" : "powershell.exe -NoLogo",
                  "cursorColor" : "#255e33",
                  "cursorShape" : "vintage",
                  "fontFace" : "Cascadia Code",
