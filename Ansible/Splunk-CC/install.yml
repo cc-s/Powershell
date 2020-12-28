@@ -1,0 +1,23 @@
+---
+# Installerar Python 3 och splunk med splunk som användare och lägger till den som en systemctl tjänst
+
+- name: Apply python3 to all nodes
+  hosts: all
+  gather_facts: no
+  roles:
+    - install-package
+
+- name: Create Splunk User
+  hosts: all
+  roles:
+    - splunk-permissions
+
+- name: Tramsfer Splunk binaries
+  hosts: all
+  roles:
+    - download-splunk-to-server
+
+- name: Install Splunk
+  hosts: all
+  roles:
+    - core-install

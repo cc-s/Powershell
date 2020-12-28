@@ -1,0 +1,99 @@
+
+#========================================
+# Ansible, OS, & Splunk Config Variables 
+#========================================
+
+
+#SSH information
+
+ansible_user: root
+# ansible_ssh_pass: samplePassword
+# ansible_become_pass: samplePassword
+#ansible_ssh_private_key_file: ~/.ssh/id_rsa
+
+# Ansible connection defaults
+ansible_connection: smart
+ansible_port: 22
+
+# OS User and Group
+os_user: splunk
+os_group: splunk
+
+# $SPLUNK_HOME path
+splunk_home: /opt/splunk
+splunk_uf_home: /opt/splunkforwarder
+
+
+#Splunk lokal admin account
+splunk_user: admin
+splunk_pass: admin123
+
+#Splunk UF lokal admin account
+splunk_uf_user: admin
+splunk_uf_pass: admin123
+
+
+#Ulimits
+ulimits: true
+
+
+#Download from Web (true) dowload from ./files (false)
+download_tgz_from_splunk_servers: false
+download_uf_tgz_from_splunk_servers: false
+
+
+
+
+#
+# Splunk Configuration Settings
+#
+
+# Allow Splunk to check for updates? 
+# (true (default) or false)
+check_for_updates: false
+
+
+#
+# Universal Forwarder Configuration Settings
+# ( uf-config.yml.)
+#
+
+# -UF Deplyment server
+uf_deploy_server_address: 192.168.0.10
+
+# UF Deplyment server port
+uf_deploy_server_port: 8089
+
+# Indexer IP
+uf_forward_internal_logs_address: 192.168.0.10
+
+# Indexerport
+uf_forward_internal_logs_port: 9997
+
+
+
+#===========================================
+# Splunk Enterprise (Core) Version Selector
+#===========================================
+
+# Latest Splunk Enterprise version, filename, checksum, and hashing algorith (for wget pull)
+splunk_version: 8.1.0.1
+splunk_tgz: splunk-8.1.0.1-24fd52428b5a-Linux-x86_64.tgz
+splunk_tgz_checksum: f5cd85c2860c6f21322abd7768c84b60
+
+# Installation method (pick one): 
+# systemd - 7.2.2 or later required.
+# initd - Suppored on any version, but no Workload Management support.
+install_method: systemd
+
+
+
+#=============================================
+# Splunk Universal Forwarder Version Selector
+#=============================================
+
+splunk_uf_version: 8.1.0
+splunk_uf_tgz: splunkforwarder-8.1.0-f57c09e87251-Linux-x86_64.tgz
+splunk_uf_tgz_checksum: 6a4e99c6287942feb0ad1e6b97a50721
+
+

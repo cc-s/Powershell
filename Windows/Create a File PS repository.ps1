@@ -14,3 +14,33 @@ Publish-Module -Path $ModulePath -Repository "$Name-SourceLocation" -NuGetApiKey
 Find-Module -Repository CC-Repository-SourceLocation
 
 Install-Module -Repository Repository-SourceLocation -Name NovelScripts -Scope AllUsers
+
+
+if (condition) {
+     
+}
+
+switch (${variable}) {
+     condition { action; break }
+     Default {}
+}
+
+switch ($x) {
+     condition { switch ($x) {
+      condition {  }
+      Default {}
+ } }
+     Default {}
+}
+
+
+switch ($x) {
+     condition {  }
+     Default {}
+}
+
+
+switch ($x) {
+     condition {  }
+     Default {}
+}
