@@ -37,7 +37,7 @@ splunk_uf_pass: admin123
 ulimits: true
 
 
-#Download from Web (true) dowload from ./files (false)
+#Download from Web (true) download from ./files (false)
 download_tgz_from_splunk_servers: false
 download_uf_tgz_from_splunk_servers: true
 
