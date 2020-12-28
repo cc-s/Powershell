@@ -7,12 +7,12 @@
   roles:
     - install-package
 
-#- name: Install Splunk Universal Forwarder
-#  hosts: all
-#  roles:
-#    - uf-install
+- name: Install Splunk Universal Forwarder
+  hosts: all
+  roles:
+    - uf-install
 
-#- name: Configure Splunk Universal Forwarder
-#  hosts: all
-#  roles:
-#    - uf-config
+- name: Configure Splunk Universal Forwarder
+  hosts: all
+  roles:
+    - uf-config
