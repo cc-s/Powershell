@@ -7,8 +7,8 @@
 #SSH information
 
 ansible_user: root
-# ansible_ssh_pass: samplePassword
-# ansible_become_pass: samplePassword
+# ansible_ssh_pass: pass
+# ansible_become_pass: pass
 #ansible_ssh_private_key_file: ~/.ssh/id_rsa
 
 # Ansible connection defaults
@@ -73,24 +73,21 @@ uf_forward_internal_logs_port: 9997
 
 
 #===========================================
-# Splunk Enterprise (Core) Version Selector
-#===========================================
+# Splunk Enterprise
 
-# Latest Splunk Enterprise version, filename, checksum, and hashing algorith (for wget pull)
+
 splunk_version: 8.1.0.1
 splunk_tgz: splunk-8.1.0.1-24fd52428b5a-Linux-x86_64.tgz
 splunk_tgz_checksum: f5cd85c2860c6f21322abd7768c84b60
 
-# Installation method (pick one): 
-# systemd - 7.2.2 or later required.
-# initd - Suppored on any version, but no Workload Management support.
+
 install_method: systemd
 
 
 
 #=============================================
-# Splunk Universal Forwarder Version Selector
-#=============================================
+# Splunk Universal Forwarder
+
 
 splunk_uf_version: 8.1.0
 splunk_uf_tgz: splunkforwarder-8.1.0-f57c09e87251-Linux-x86_64.tgz
