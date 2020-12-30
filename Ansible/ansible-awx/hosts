@@ -1,0 +1,3 @@
+[awx2]
+awx2 ansible_ssh_user=root
+
