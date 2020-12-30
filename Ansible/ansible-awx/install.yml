@@ -6,6 +6,7 @@
 # if failure on TASK [local_docker : Create Preload data] run /usr/bin/awx-manage create_preload_data from within container awx_task
 # docker exec -it awx_task "/bin/bash"
 # /usr/bin/awx-manage create_preload_data (can fail, run untill it works)
+# ansible-galaxy collection install community.general is needed
 
 - hosts: awx2
   vars:
