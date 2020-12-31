@@ -1,4 +1,0 @@
-
-[splunkhosts]
-#splunk-test.jul ansible_host=192.168.0.10
-splunk-test-hf.jul ansible_host=192.168.0.11

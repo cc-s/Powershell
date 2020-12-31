@@ -1,9 +1,0 @@
----
-
-- name: Install requred packages
-  package:
-    name:
-      - python3
-      - sysstat
-    state: latest
-  become: yes
