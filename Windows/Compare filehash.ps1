@@ -1,6 +1,4 @@
 #Compare filehash
-
-
 Function Compare-FileHashes {
      <#
 .Synopsis
@@ -52,7 +50,7 @@ Function Compare-FileHashes {
      Begin {
           $obj = @()
 
-          #$Files = dir "E:\Users\Carl C\Downloads\" -File | ? Name -Like "*msi*"
+          #$Files = dir "C:\Users\Downloads\" -File | ? Name -Like "*msi*"
           
           switch ($PSCmdlet.ParameterSetName) {
                'File' {
