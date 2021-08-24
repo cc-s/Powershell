@@ -49,8 +49,6 @@ Function Compare-FileHashes {
 
      Begin {
           $obj = @()
-
-          #$Files = dir "C:\Users\Downloads\" -File | ? Name -Like "*msi*"
           
           switch ($PSCmdlet.ParameterSetName) {
                'File' {
