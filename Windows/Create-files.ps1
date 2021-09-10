@@ -45,22 +45,57 @@ function New-Files {
                     }
                     return $true
                })]
-          [System.IO.FileInfo]$Path 
+          [System.IO.FileInfo]$Path,
+
+          [Parameter(Mandatory = $false,
+               ValueFromPipelineByPropertyName = $true,
+               Position = 3,
+               ParameterSetName = 'File')]
+               $NumberOfDirs
      )
 
      Begin {
           $i = 0
      }
      Process {
-          while ($i -lt $NumberOfFiles) {
-               $ByteObj = New-Object -TypeName Byte[] -ArgumentList ($FileSize / 4.58 )
-               $RandomObj = New-Object -TypeName System.Random 
-               $RandomObj.NextBytes($ByteObj)
 
-               Set-Content -Path "$path\testfiles$i" -Value $ByteObj -Encoding utf8
-               $i++
-               
-          }#end while
+          switch ($NumberOfDirs) {
+               "$null" { 
+                    while ($i -lt $NumberOfFiles) {
+                         $ByteObj = New-Object -TypeName Byte[] -ArgumentList ($FileSize / 4.58 )
+                         $RandomObj = New-Object -TypeName System.Random 
+                         $RandomObj.NextBytes($ByteObj)
+          
+                         Set-Content -Path "$path\testfiles$i" -Value $ByteObj -Encoding utf8
+                         $i++
+                    }#end while
+               }#End Null
+               "0" {break}
+               Default {
+                    $array = 0..$NumberOfFiles
+                    $j = 1
+                    $k = 1
+                         do {
+                         $NewPath = "$($path)folder$k"
+                              mkdir $NewPath
+                         
+                         $j..(($j+= $NumberOfDirs) - 1) | ForEach-Object {
+                              
+                           #   while ($i -lt $NumberOfFiles) {
+                                   $ByteObj = New-Object -TypeName Byte[] -ArgumentList ($FileSize / 4.58 )
+                                   $RandomObj = New-Object -TypeName System.Random 
+                                   $RandomObj.NextBytes($ByteObj)
+                    
+                                   Set-Content -Path "$NewPath\testfiles$_" -Value $ByteObj -Encoding utf8
+                             #      $i++
+                            #  }#end while
+                         }#end foreach file
+                         if ($k -lt $NumberOfDirs)
+                         {$k++}
+                         }
+                         until ($j -ge $array.count -1)
+               }#End Default
+          }#End switch
      }#end process
      End {}
 
@@ -68,4 +103,4 @@ function New-Files {
 
 
 
-New-Files -Path "F:\Test" -FileSize 4kb -NumberOfFiles 100000 
+New-Files -Path "./" -FileSize 4kb -NumberOfFiles 8 -NumberOfDirs 2
