@@ -1,5 +1,4 @@
 #Create-files
-
 function New-Files {
      <#
 .Synopsis
@@ -50,7 +49,7 @@ function New-Files {
      )
 
      Begin {
-          $i = 1
+          $i = 0
      }
      Process {
           while ($i -lt $NumberOfFiles) {
