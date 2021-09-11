@@ -79,7 +79,7 @@ function New-Files {
                          $NewPath = "$($path)folder$k"
                               mkdir $NewPath
                          
-                         $j..(($j+= $NumberOfDirs) - 1) | ForEach-Object {
+                         $j..(($j+= ($NumberOfFiles/$NumberOfDirs)) - 1) | ForEach-Object {
                               
                            #   while ($i -lt $NumberOfFiles) {
                                    $ByteObj = New-Object -TypeName Byte[] -ArgumentList ($FileSize / 4.58 )
