@@ -1,6 +1,9 @@
 #Windbg commands
 
 Blue Screens (Bug Checks)
+Log all commands and output to a file
+.logopen /t /u c:\temp\mylogfile.txt
+
 Default verbose summation
 analyze –v: 
 
@@ -28,5 +31,54 @@ Outstanding IO
 !object: The !object extension displays information about a system object.
 !irp: The !irp extension displays information about an I/O request packet (IRP).
 
+Show hostname
+dpu mrxsmb!SmbCeContext
 
 Freezes and lockups
+
+
+!analyze -v -hang
+!thread
+!running -it
+
+!locks: The !locks extension displays all locks held on resources by threads. A lock can be shared or exclusive, which means no other threads can gain access to that resource. This information is useful when a deadlock occurs on a system. A deadlock is caused by one non-executing thread holding an exclusive lock on a resource that the executing thread needs.
+!qlocks: The !qlocks extension displays the state of all queued spin locks.
+
+!stacks
+!vm: The !vm extension displays summary information about virtual memory use statistics on the target system.
+!memusage: The !memusage extension displays summary statistics about physical memory use.
+
+!poolused [n] : The !poolused extension displays memory use summaries, based on the tag used for each pool allocation.
+               3: nonpaged pool 
+               5: paged pool
+
+
+
+Performance counters
+
+"\Cache\*"
+"\LogicalDisk(*)\*"
+"\Memory\*"
+"\Network Interface(*)\*"
+"\Paging file\*"
+"\PhysicalDisk(*)\*"
+"\Process(*)\*"
+"\Processor Information(*)\*"
+"\Server\*"
+"\Server Work Queues(*)\*"
+"\System\*"
+"\TCPv4\*"
+"\TCPv6\*"
+
+
+ $a = 'logman start "Circular Kernel Context Logger" -p "Circular Kernel Session Provider" (process,thread,img,file,driver) -ets'
+Invoke-Expression $a
+
+Lists the logs
+ !wmitrace.strdump
+Retrieves the log entries
+ !wmitrace.eventlogdump [strdump-id]
+
+#Invoke bugcheck with right Ctrl + Scroll Lock 2x, Reboot after setting the registry properties.
+ cd HKLM:\System\CurrentControlSet\Services\kbdhid\Parameters\
+ New-ItemProperty -Name CrashOnCtrlScroll -Value 0x01 -path .\
