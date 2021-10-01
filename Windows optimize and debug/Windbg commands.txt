@@ -1,0 +1,32 @@
+#Windbg commands
+
+Blue Screens (Bug Checks)
+Default verbose summation
+analyze –v: 
+
+!process: The !process extension displays information about the specified process, or about all processes, including the EPROCESS block.
+!thread: The !thread extension displays summary information about a thread on the target system, including the ETHREAD block. This command can be used only during kernel-mode debugging
+
+Running threads
+!running -it: The !running extension displays a list of running threads on all processors of the target computer.
+               -i Causes the display to include idle processors as well
+               -t Causes a stack trace to be displayed for each processor.
+
+Non MS Drivers
+k[v]: Displays frame pointer omission (FPO) information. On x86-based processors, the display also includes calling convention information.
+!stacks: The !stacks extension gives a brief summary of the state of every thread. You can use this extension instead of the !process extension to get a quick overview of the system, especially when debugging multithread issues such as resource conflicts or deadlocks.
+
+u: The u\* commands display an assembly translation of the specified program code in memory.
+uf: The uf command displays an assembly translation of the specified function in memory.
+
+Drivers
+lm t n:The lm command lists all of the modules and the status of symbols for each module.
+          t: Displays the file time stamps. When you use t, symbol type information is not displayed.
+          n: Displays the image name. When you use n, symbol type information is not displayed.
+
+Outstanding IO
+!object: The !object extension displays information about a system object.
+!irp: The !irp extension displays information about an I/O request packet (IRP).
+
+
+Freezes and lockups
