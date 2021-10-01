@@ -1,0 +1,84 @@
+#Windbg commands
+
+Blue Screens (Bug Checks)
+Log all commands and output to a file
+.logopen /t /u c:\temp\mylogfile.txt
+
+Default verbose summation
+analyze –v: 
+
+!process: The !process extension displays information about the specified process, or about all processes, including the EPROCESS block.
+!thread: The !thread extension displays summary information about a thread on the target system, including the ETHREAD block. This command can be used only during kernel-mode debugging
+
+Running threads
+!running -it: The !running extension displays a list of running threads on all processors of the target computer.
+               -i Causes the display to include idle processors as well
+               -t Causes a stack trace to be displayed for each processor.
+
+Non MS Drivers
+k[v]: Displays frame pointer omission (FPO) information. On x86-based processors, the display also includes calling convention information.
+!stacks: The !stacks extension gives a brief summary of the state of every thread. You can use this extension instead of the !process extension to get a quick overview of the system, especially when debugging multithread issues such as resource conflicts or deadlocks.
+
+u: The u\* commands display an assembly translation of the specified program code in memory.
+uf: The uf command displays an assembly translation of the specified function in memory.
+
+Drivers
+lm t n:The lm command lists all of the modules and the status of symbols for each module.
+          t: Displays the file time stamps. When you use t, symbol type information is not displayed.
+          n: Displays the image name. When you use n, symbol type information is not displayed.
+
+Outstanding IO
+!object: The !object extension displays information about a system object.
+!irp: The !irp extension displays information about an I/O request packet (IRP).
+
+Show hostname
+dpu mrxsmb!SmbCeContext
+
+Freezes and lockups
+
+
+!analyze -v -hang
+!thread
+!running -it
+
+!locks: The !locks extension displays all locks held on resources by threads. A lock can be shared or exclusive, which means no other threads can gain access to that resource. This information is useful when a deadlock occurs on a system. A deadlock is caused by one non-executing thread holding an exclusive lock on a resource that the executing thread needs.
+!qlocks: The !qlocks extension displays the state of all queued spin locks.
+
+!stacks
+!vm: The !vm extension displays summary information about virtual memory use statistics on the target system.
+!memusage: The !memusage extension displays summary statistics about physical memory use.
+
+!poolused [n] : The !poolused extension displays memory use summaries, based on the tag used for each pool allocation.
+               3: nonpaged pool 
+               5: paged pool
+
+
+
+Performance counters
+
+"\Cache\*"
+"\LogicalDisk(*)\*"
+"\Memory\*"
+"\Network Interface(*)\*"
+"\Paging file\*"
+"\PhysicalDisk(*)\*"
+"\Process(*)\*"
+"\Processor Information(*)\*"
+"\Server\*"
+"\Server Work Queues(*)\*"
+"\System\*"
+"\TCPv4\*"
+"\TCPv6\*"
+
+
+ $a = 'logman start "Circular Kernel Context Logger" -p "Circular Kernel Session Provider" (process,thread,img,file,driver) -ets'
+Invoke-Expression $a
+
+Lists the logs
+ !wmitrace.strdump
+Retrieves the log entries
+ !wmitrace.eventlogdump [strdump-id]
+
+#Invoke bugcheck with right Ctrl + Scroll Lock 2x, Reboot after setting the registry properties.
+ cd HKLM:\System\CurrentControlSet\Services\kbdhid\Parameters\
+ New-ItemProperty -Name CrashOnCtrlScroll -Value 0x01 -path .\
