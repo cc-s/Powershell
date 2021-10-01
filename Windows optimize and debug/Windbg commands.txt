@@ -52,8 +52,6 @@ Freezes and lockups
                3: nonpaged pool 
                5: paged pool
 
-
-
 Performance counters
 
 "\Cache\*"
@@ -82,3 +80,4 @@ Retrieves the log entries
 #Invoke bugcheck with right Ctrl + Scroll Lock 2x, Reboot after setting the registry properties.
  cd HKLM:\System\CurrentControlSet\Services\kbdhid\Parameters\
  New-ItemProperty -Name CrashOnCtrlScroll -Value 0x01 -path .\
+ 
