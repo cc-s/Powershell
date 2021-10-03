@@ -72,13 +72,13 @@ Stop-NetTrace
 Function ConvertETL2To-PCAP {
      [CmdletBinding(DefaultParameterSetName = 'Default')]
      [Alias()]
-          param(
+     param(
           $etl2In,
           $pcapOut,
           $etl2pcapngPath
      )
 
-     if ($etl2pcapngPath -eq $null){
+     if ($etl2pcapngPath -eq $null) {
 
           $etl2pcapngPath = "C:\Verktyg\etl2pcapng\etl2pcapng.exe"
      }#End if etl2
