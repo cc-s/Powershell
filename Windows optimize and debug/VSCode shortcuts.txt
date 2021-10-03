@@ -1,0 +1,8 @@
+#VSCode shortcuts
+
+1. "Ctrl + F2" to replace all occurrences of a variable or other selected text within a document.
+2. Alt click to create multiple cursors. "Ctrl + Alt + Up/Down Arrow" to create cursors above and below.
+3. Minimize all functions (brackets). First "Ctrl + K" then "Ctrl + 0".
+4. Expand all functions. First "Ctrl + K" then "Ctrl + J".
+5. Create a comment block. Select the rows to commend and then press "Shift + Alt + A". Do the same to uncomment the block.
+
