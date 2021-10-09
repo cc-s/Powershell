@@ -1,0 +1,11 @@
+Bookmarks 
+Bracket Pair Colorizer 2
+Material Theme
+Material Theme Icons
+PowerShell
+Prettier Formatter
+Rainbow CSV
+Visual Studio Code Remote - SSH
+Visual Studio Code Remote - SSH: Editing Configuration Files
+Visual Studio Code Remote - WSL
+Visual Studio Code Extension for Splunk
