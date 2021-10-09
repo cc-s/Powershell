@@ -6,9 +6,11 @@
     "activityBar.background": "#05001f",
     "foreground": "#f4f7f4",
     "textCodeBlock.background": "#e62f2f",
-    "editor.foreground": "#cf9393",
+    "editor.foreground": "#dad6d6",
     "editorWhitespace.foreground": "#ff0000",
-    "editor.wordHighlightStrongBackground": "#d3434344",
+    "editor.wordHighlightStrongBackground": "#f1252544",
+    "editor.selectionHighlightBackground": "#f3530975",
+    "editor.selectionBackground": "#135564",
     "scrollbarSlider.hoverBackground":"#1900ff"
   },
   "editor.tokenColorCustomizations": {
@@ -20,6 +22,7 @@
   "editor.fontWeight": "bold",
   "editor.tabCompletion": "on",
   "powershell.integratedConsole.focusConsoleOnExecute": false,
+
   "terminal.integrated.fontFamily": "Consolas",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.lineHeight": 1,
@@ -48,7 +51,8 @@
   "terminal.integrated.profiles.windows": {
     "PowerShell Core": {
       "source": "PowerShell",
-      "icon": "terminal-powershell"
+      "icon": "terminal-powershell",
+      "args": ["-nologo"]
     },
     "Command Prompt": {
       "path": [
@@ -62,7 +66,8 @@
       "source": "Git Bash"
     },
     "Windows PowerShell": {
-      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+      "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "args": ["-nologo"]
     }
   },
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
