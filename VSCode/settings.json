@@ -29,7 +29,7 @@
   "editor.renderWhitespace": "all",
   "editor.tokenColorCustomizations": {
     "comments": "#278f35",
-    "functions": "#7344be",
+    "functions": "#9d61ff",
     "variables": "#19a6fd",
     "strings": "#ada101"
   },
