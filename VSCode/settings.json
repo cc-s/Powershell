@@ -1,7 +1,6 @@
 {
   "telemetry.telemetryLevel":"off",
   "workbench.colorTheme": "Material Theme Palenight High Contrast",
-  "editor.minimap.enabled": false,
   "workbench.colorCustomizations": {
     "activityBar.background": "#05001f",
     "foreground": "#f4f7f4",
@@ -13,25 +12,40 @@
     "editor.selectionBackground": "#135564",
     "scrollbarSlider.hoverBackground":"#1900ff"
   },
+  "workbench.editor.titleScrollbarSizing": "large",
+  "workbench.startupEditor": "none",
+  "workbench.sideBar.location": "right",
+  "workbench.editor.enablePreview":false,
+  "workbench.editor.closeEmptyGroups": false,
+  
+  //Editor settings
+  "editor.minimap.enabled": false,
+  "editor.fontWeight": "bold",
+  "editor.formatOnSave": true,
+  "editor.scrollbar.horizontal": "visible",
+  "editor.fontSize": 15,
+  "editor.tabCompletion": "on",
+  "editor.tabSize": 5,
+  "editor.renderWhitespace": "all",
   "editor.tokenColorCustomizations": {
     "comments": "#278f35",
-    "functions": "#844ddb",
-    "variables": "#0099ff"
+    "functions": "#7344be",
+    "variables": "#19a6fd",
+    "strings": "#ada101"
   },
-
-  "editor.fontWeight": "bold",
-  "editor.tabCompletion": "on",
+ 
+  //Powershell 
   "powershell.integratedConsole.focusConsoleOnExecute": false,
+  "powershell.integratedConsole.showOnStartup": false,
+  "powershell.scriptAnalysis.enable": true,
+  "powershell.codeFormatting.autoCorrectAliases": true,
+  "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
+  "powershell.codeFormatting.useCorrectCasing": true,
+  "powershell.codeFormatting.whitespaceBetweenParameters": true,
+  "powershell.codeFormatting.addWhitespaceAroundPipe": false,
 
-  "terminal.integrated.fontFamily": "Consolas",
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.rightClickBehavior": "copyPaste",
-  "editor.tabSize": 5,
   "files.autoSave": "afterDelay",
   "git.enableSmartCommit": true,
-  "workbench.sideBar.location": "right",
-  "editor.renderWhitespace": "all",
   "[json]": {},
 
   "bracket-pair-colorizer-2.colors": ["Red", "Gold", "Green"],
@@ -40,14 +54,12 @@
   "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
   "bracket-pair-colorizer-2.rulerPosition": "Full",
 
-  "editor.formatOnSave": true,
-  "powershell.integratedConsole.showOnStartup": false,
-  "powershell.scriptAnalysis.enable": true,
-
   "remote.SSH.showLoginTerminal": true,
   "remote.SSH.useLocalServer": false,
   "remote.SSH.localServerDownload": "always",
   "explorer.confirmDelete": false,
+
+  //Terminal settings
   "terminal.integrated.profiles.windows": {
     "PowerShell Core": {
       "source": "PowerShell",
@@ -71,14 +83,12 @@
     }
   },
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
-  "editor.scrollbar.horizontal": "visible",
-  "workbench.editor.titleScrollbarSizing": "large",
-  "workbench.startupEditor": "none",
+  "terminal.integrated.fontFamily": "Consolas",
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.rightClickBehavior": "copyPaste",
+
   "security.workspace.trust.untrustedFiles": "open",
-  "window.zoomLevel": 1,
-  "powershell.codeFormatting.autoCorrectAliases": true,
-  "powershell.codeFormatting.trimWhitespaceAroundPipe": true,
-  "powershell.codeFormatting.useCorrectCasing": true,
-  "powershell.codeFormatting.whitespaceBetweenParameters": true,
-  "powershell.codeFormatting.addWhitespaceAroundPipe": false
+  "window.zoomLevel": 1
+
 }
