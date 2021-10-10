@@ -3,7 +3,7 @@ Bracket Pair Colorizer 2
 Material Theme
 Material Theme Icons
 PowerShell
-Prettier Formatter
+Prettier Code Formatter: For JSON,YAML
 Rainbow CSV
 Visual Studio Code Remote - SSH
 Visual Studio Code Remote - SSH: Editing Configuration Files
