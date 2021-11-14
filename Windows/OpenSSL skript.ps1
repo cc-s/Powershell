@@ -112,7 +112,7 @@ Convert-PFXToPem -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skrip
 
 
 
-Function Convert-PFXTpKey {
+Function Convert-PFXToKey {
      <#
 .Synopsis
 Exports the private key in encrypted and unecrypted form from a PFX file
@@ -227,7 +227,7 @@ A convertion function.
           }
      } #End
 
-}#End function Convert-PFXTpKey
+}#End function Convert-PFXToKey
 
-Convert-PFXTpKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -Password (ConvertTo-SecureString -String "abcd" -AsPlainText -Force) -Verbose
-Convert-PFXTpKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -PasswordList $Passwordlist -Verbose
+Convert-PFXToKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -Password (ConvertTo-SecureString -String "abcd" -AsPlainText -Force) -Verbose
+Convert-PFXToKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -PasswordList $Passwordlist -Verbose
