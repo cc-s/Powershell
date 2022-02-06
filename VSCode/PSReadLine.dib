@@ -1,0 +1,19 @@
+#!markdown
+
+Aktivera intellisense med historik
+
+#!markdown
+
+Hämtar aktuella inställningar
+
+#!pwsh
+
+Get-PSReadLineOption
+
+#!markdown
+
+Aktiverar historik
+
+#!pwsh
+
+Set-PSReadLineOption -PredictionSource History
