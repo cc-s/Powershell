@@ -1,0 +1,94 @@
+#!markdown
+
+## PowerShell foreach
+Kör varje loop minst två gånger för tydligaste resultat
+
+#!markdown
+
+Foreach-object i pipeline och objektet skapas med en "Type Accelerator"
+
+#!pwsh
+
+$files = dir "C:\Windows\System32"
+
+$obj = @()
+Measure-Command -Expression {
+$files | ForEach-Object -Process {
+$hash = [ordered]@{
+          Name = $_.Name
+          path = $_.FullName
+     }
+    $obj +=[PSCustomObject]$hash
+}
+}|select seconds,Milliseconds #end measure
+
+#!markdown
+
+Foreach i pipeline och objektet skapas med New-Object
+
+#!pwsh
+
+$obj2 = @()
+Measure-Command -Expression {
+     $files | ForEach-Object -Process {
+     
+     $props = [ordered]@{
+          Name = $_.Name
+          path = $_.FullName
+     }
+     $obj2 += New-Object -TypeName pscustomobject -Property $props
+}
+}|select seconds,Milliseconds #end measure
+
+#!markdown
+
+Foreach som funktion och objektet skapas med New-Object
+
+#!pwsh
+
+$obj3 = @()
+Measure-Command -Expression {
+foreach ($file in $files) {
+     
+     $props = [ordered]@{
+          Name = $file.Name
+          path = $file.FullName
+     }
+     $obj3 += New-Object -TypeName pscustomobject -Property $props
+}
+}|select seconds,Milliseconds #end measure
+
+#!markdown
+
+Foreach-object i pipline med parallel parametern och objektet skapas med New-Object 
+
+#!pwsh
+
+$obj4 = @()
+Measure-Command -Expression {
+     $files | ForEach-Object -Parallel  {
+     
+     $props = [ordered]@{
+          Name = $_.Name
+          path = $_.FullName
+     }
+     $obj4 += New-Object -TypeName pscustomobject -Property $props
+}
+}|select seconds,Milliseconds #end measure 
+
+#!markdown
+
+Foreach-object i pipline med parallel parametern och objektet skapas med en "Type Accelerator"
+
+#!pwsh
+
+$obj5 = @()
+Measure-Command -Expression {
+     $files | ForEach-Object -parallel {
+          $hash = [ordered]@{
+                    Name = $_.Name
+                    path = $_.FullName
+               }
+              $obj5 +=[PSCustomObject]$hash
+          }
+}|select seconds,Milliseconds #end measure

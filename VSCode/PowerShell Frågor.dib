@@ -1,0 +1,67 @@
+#!markdown
+
+## PowerShell frågor
+
+#!markdown
+
+Hitta hjälp om powershell språket
+(Alla about finns inte i PS7)
+
+#!pwsh
+
+Get-Help -Name about_* -OutVariable a
+Write-Host "`nAntalet about avsnitt $($a.count)"
+
+#!markdown
+
+Vilken powershell version körs
+
+#!pwsh
+
+$PSVersionTable
+
+#!markdown
+
+Hitta alla cmdlets med parametern computername
+
+#!pwsh
+
+Get-Help -Name * -Parameter ComputerName
+
+#!markdown
+
+Fjärradministration
+
+#!pwsh
+
+Get-Command -Noun *Session* -Verb Get, enter
+
+#!markdown
+
+For loop
+
+#!pwsh
+
+for (i = 0; i -lt length; i++) {
+     ....
+}
+
+#!markdown
+
+Foreach loop
+
+#!pwsh
+
+Get-ChildItem | ForEach-Object -Process { Write-Host $PSItem.Name }
+
+foreach ($item in $collection) {
+     
+}
+
+#!markdown
+Get-Content Accelerators
+
+#!pwsh
+$a = @{Name = "abc"; Email = "a@b.cc" }
+[PSCustomObject]$a
+
