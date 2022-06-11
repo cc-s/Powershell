@@ -9,3 +9,4 @@ $PSStyle.FileInfo.extension.add(".xml", "`e[95m")
 $PSStyle.FileInfo.extension.add(".json", "`e[95m")
 
 function Profile { code $PROFILE.CurrentUserAllHosts }
+Set-PSReadLineKeyHandler -Key ? -Function MenuComplete
