@@ -4,16 +4,11 @@
 Function Start-NetTrace {
      <#
 .Synopsis
-   Compares a set of SHA265 hashes to one or more files.
+   Starts a Netsh package trace
 .DESCRIPTION
    Long description
 .EXAMPLE
-   Compare-FileHashes -Hashlist "9190F005ADCC59F1D2CFF21B8D4FBBA70D72B8B4B567D845B33508A9C388A7A2", "E83D5041B91BC337092E5BA54DFFD9B90AF2DA3ACA365D700458059B7F5C184E" -Files "E:\Users\Carl C\Downloads\PowerShell-7.1.4-win-x64.msi","E:\Users\Carl C\Downloads\mumble-1.2.4.msi"
-.EXAMPLE
-   "9190F005ADCC59F1D2CFF21B8D4FBBA70D72B8B4B567D845B33508A9C388A7A2", "E83D5041B91BC337092E5BA54DFFD9B90AF2DA3ACA365D700458059B7F5C184E" | Compare-FileHashes -Files "E:\Users\Carl C\Downloads\PowerShell-7.1.4-win-x64.msi","E:\Users\Carl C\Downloads\mumble-1.2.4.msi"
-.EXAMPLE
- $a = [PSCustomObject]@{"Hashlist"="9190F005ADCC59F1D2CFF21B8D4FBBA70D72B8B4B567D845B33508A9C388A7A2", "E83D5041B91BC337092E5BA54DFFD9B90AF2DA3ACA365D700458059B7F5C184E"; "Files"="E:\Users\Carl C\Downloads\PowerShell-7.1.4-win-x64.msi","E:\Users\Carl C\Downloads\mumble-1.2.4.msi"}
- $a | Compare-FileHashes
+   Start-NetTrace -Truncate $false -Path "C:\Temp"
 .ROLE
    The role this cmdlet belongs to
 .FUNCTIONALITY
