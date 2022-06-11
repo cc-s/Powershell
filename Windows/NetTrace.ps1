@@ -78,11 +78,11 @@ Function ConvertETL2To-PCAP {
           $etl2pcapngPath = "C:\Verktyg\etl2pcapng\etl2pcapng.exe"
      }#End if etl2
      if ( -Not ($etl2pcapngPath | Test-Path) ) {
-          throw "Folder does not exist"
+          throw "etl2pcapng.exe path missing"
      }
      & $etl2pcapngPath "$etl2Path" "$pcapngPath"
 
 
 }#End ConvertTo-PCAP
 
-ConvertETL2To-PCAP -etl2In C:\Temp\nettrace.etl -pcapOut C:\temp\nettrace.pcapng
+ConvertETL2To-PCAP -etl2pcapngPath "C:\Verktyg\etl2pcapng\etl2pcapng.exe" -etl2In C:\Temp\nettrace.etl -pcapOut C:\temp\nettrace.pcapng
