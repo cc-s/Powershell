@@ -1,0 +1,19 @@
+$Names = Invoke-RestMethod -Method Get -Uri "https://api.namnapi.se/v2/names.json?limit=100"
+
+
+$CountNames = 20000
+$NewName = @()
+for ( $i = 0; $i -lt $CountNames; $i++) {
+     $FirstName = Get-Random -Maximum $Names.names.firstname 
+     $LastName = Get-Random -Maximum $Names.names.surname
+
+     $Props = @{
+          Firstname = $FirstName
+          Lastname  = $LastName
+     }
+
+     $NewName += New-Object -TypeName PSCustomObject -Property $props
+}
+
+#($NewName | Sort-Object | Get-Unique -AsString).count
+$NewName | Sort-Object | Get-Unique -AsString 
