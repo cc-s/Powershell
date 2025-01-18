@@ -231,3 +231,36 @@ A convertion function.
 
 Convert-PFXToKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -Password (ConvertTo-SecureString -String "abcd" -AsPlainText -Force) -Verbose
 Convert-PFXToKey -OpenSSLPath "C:\Program Files\Git\usr\bin" -CertPath "C:\Skripts\openssltest" -PasswordList $Passwordlist -Verbose
+
+
+
+Function New-CodeSigningCert {
+     Begin {
+          $openssl = "C:\Program Files\Git\usr\bin\openssl.exe"
+          Write-Verbose "$OpenSSLPath\$openssl"
+     } #Begin
+
+
+     Process {
+
+          #Generate CSR
+
+          $KeyParameters = @(
+               "req",
+               "-new",
+               "-newkey rsa:3072",
+               "-nodes",
+               "-out C:\temp\code_signing_csr.txt",
+               "-keyout C:\temp\code_signing_key.key",
+               '-subj "/C=SE/ST=Stock/O=CC.jul/CN=cc"',
+               '-addext "keyUsage = critical,digitalSignature"',
+               '-addext "extendedKeyUsage = critical,codeSigning"'
+          )
+          Write-Verbose "Params: $($KeyParameters)"
+
+          $Proc1 = Start-Process -FilePath "$openssl" -ArgumentList $KeyParameters -Wait -PassThru -RedirectStandardError "C:\temp\Error1.log"
+
+
+     }
+
+}
