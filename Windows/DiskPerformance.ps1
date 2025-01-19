@@ -47,7 +47,8 @@ function Get-IOPS {
     [int]
     $MaxSamples
   )
-  $Obj = @()
+  $Obj = New-Object -TypeName System.Collections.Generic.List[PSObject]
+
   #Swedish
   #$IOs = Get-Counter -Counter "\Logisk disk($Drive)\Disköverföringar/s" -SampleInterval $SampleInterval -MaxSamples $MaxSamples | select -ExpandProperty CounterSamples
   
@@ -62,7 +63,7 @@ function Get-IOPS {
 
     }
 
-    $Obj += New-Object -TypeName psobject -Property $Props
+    $Obj.Add([PSCustomObject]$Props)
   }
 
   $Obj | Sort-Object -Property disk
